@@ -14,7 +14,7 @@ setup:
 	sudo yum -y install docker
 	source ~/.devops/bin/activate
 	pip install --upgrade pip &&\
-		pip install -r requirements.txt
+		pip install --user -r requirements.txt
 
 #install:
 	# This should be run from inside a virtualenv
