@@ -49,6 +49,6 @@ setcontext:
 	aws eks --region us-west-2 update-kubeconfig --name eks-project --kubeconfig ~/.kube/eks-project
 
 deployContainer:
-	ansible-playbook -i inventory deploy-app.yml
+	ansible-playbook -i inventory deploy-app.yml -vvv
 
 all: setup install lint test
