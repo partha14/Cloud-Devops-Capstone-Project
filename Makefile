@@ -9,6 +9,7 @@ setup:
 	# Create python virtualenv & source it
 	# source ~/.devops/bin/activate
 	sudo yum install -y python3
+	yum -y install python-pip 
 	python3 -m venv ~/.devops
 	source ~/.devops/bin/activate
 
