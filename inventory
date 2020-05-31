@@ -1,2 +1,2 @@
 [localhost]
-127.0.0.1  ansible_connection=local ansbile_python_interpreter=python3
+127.0.0.1  ansible_connection=local ansible_playbook_python=/usr/bin/python3
