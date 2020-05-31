@@ -1,28 +1,27 @@
 pipeline {
     agent any
     stages {
-        stage('Linting') {
-
-               make lint
-
-             }
-        stage('Build image') {
-
-            make buildimage
+        stage('one') {
+            steps {
+                parallel("first": {
+                    echo "hello"
+                },
+                        "second": {
+                            echo "world"
+                        }
+                )
+            }
         }
-        
-        stage('Push image') {
-            make pushimage
+        stage('two') {
+            steps {
+                parallel("first": {
+                    echo "hello"
+                },
+                        "second": {
+                            echo "world"
+                        }
+                )
+            }
         }
-        
-        stage('set current kubectl context') {
-            make setcontext
-        }
-        
-        stage('Deploy container') {
-            make deployContainer
-        }
-
     }
 }
-
