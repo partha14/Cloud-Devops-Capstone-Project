@@ -38,8 +38,7 @@ lint:
 	#html_lint.py index.html
 	echo 'test'
 pushimage:
-	
-    sudo docker login --username $user --password $pass
+	sudo docker login --username $user --password $pass
 	sudo docker tag helloworld partha14/helloworld:v1 
 	echo "Docker ID and Image: $dockerpath"
 	sudo docker push partha14/helloworld:v1
