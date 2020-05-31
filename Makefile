@@ -22,6 +22,7 @@ setup:
 	python3 -m pip install --user ansible
 	python3 -m pip install --user requests
 	python3 -m pip install --user openshift
+	python3 -m pip install --user kubernetes
 	python3 -m pip freeze
 #install:
 	# This should be run from inside a virtualenv
