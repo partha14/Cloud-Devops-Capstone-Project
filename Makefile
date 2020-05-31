@@ -16,7 +16,7 @@ setup:
 	#pip install --user --upgrade pip &&\
 		#pip install --user -r requirements.txt
 	python3 -m pip install --user hadolintw
-	python3 -m pip install --user html_lint
+	python3 -m pip install --user html-linter
 	python3 -m pip install --user boto3
 	python3 -m pip install --user botocore
 	python3 -m pip install --user ansible
