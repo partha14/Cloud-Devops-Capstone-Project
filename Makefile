@@ -16,12 +16,12 @@ setup:
 	#pip install --user --upgrade pip &&\
 		#pip install --user -r requirements.txt
 	python3 -m pip install --user hadolintw
-	pip install --user html_lint
-	pip install --user boto3
-	pip install --user botocore
-	pip install --user ansible
-	pip install --user requests
-	pip install --user openshift
+	python3 -m pip install --user html_lint
+	python3 -m pip install --user boto3
+	python3 -m pip install --user botocore
+	python3 -m pip install --user ansible
+	python3 -m pip install --user requests
+	python3 -m pip install --user openshift
 
 #install:
 	# This should be run from inside a virtualenv
