@@ -4,8 +4,11 @@
 
   vars_files:
     - vars/main.yml
-
   tasks:
+    - python_requirements_facts:
+       dependencies:
+        - openshift
+        - requests
     - name: Ensure VPC exists via CloudFormation.
       cloudformation:
         stack_name: eks-example-vpc

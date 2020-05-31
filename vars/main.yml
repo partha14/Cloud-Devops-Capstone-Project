@@ -1,7 +1,7 @@
 ---
 # AWS Settings.
 aws_environment: true
-aws_region: us-east-1
+aws_region: us-west-2
 aws_profile: default
 
 # This variable will be populated during playbook runs.
@@ -14,16 +14,18 @@ eks_kubernetes_version: "1.16"
 
 # Nodegroup settings.
 eks_nodegroup_name: eks-example-nodegroup
-eks_nodegroup_instance_type: t3.medium
-eks_nodegroup_cluster_size: 3
+eks_nodegroup_instance_type: t3.small
+eks_nodegroup_cluster_size: 2
 
 # WordPress settings.
-wordpress_mysql_password: ebJYfAi2QjhPsR
+#wordpress_mysql_password: ebJYfAi2QjhPsR
 
 # Domain settings for Route53 DNS.
-wordpress_route53_zone: '' # e.g. 'example.com'
-wordpress_route53_domain: '' # e.g. 'wordpress.example.com'
+#wordpress_route53_zone: '' # e.g. 'example.com'
+#wordpress_route53_domain: '' # e.g. 'wordpress.example.com'
 
 # Kubernetes settings.
+#k8s_kubeconfig: $HOME/.kube/config
 k8s_kubeconfig: ~/.kube/eks-example
+
 k8s_no_log: true

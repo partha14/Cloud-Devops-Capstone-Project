@@ -1,0 +1,34 @@
+- hosts: localhost
+  gather_facts: false
+
+  vars_files:
+    - vars/main.yml
+  vars:
+    ansible_python_interpreter: '{{ ansible_playbook_python }}'
+  tasks:
+    - python_requirements_facts:
+       dependencies:
+        - openshift
+        - requests
+    - name: Create a k8s namespace
+      k8s:
+       name: testing
+       api_version: v1
+       kind: Namespace
+       state: present
+
+    - name: Create a Service object by reading the definition from a file
+      k8s:
+       definition: '{{ item }}'
+       namespace: default
+       state: present
+      loop: "{{ lookup('template', 'helloworld/helloworld-deployment.yml') | from_yaml_all | list }}"
+      no_log: k8s_no_log
+
+    - name: Create a Service object by reading the definition from a file
+      k8s:
+       definition: '{{ item }}'
+       namespace: default
+       state: present
+      loop: "{{ lookup('template', 'helloworld/helloworld-service.yml') | from_yaml_all | list }}"
+      no_log: k8s_no_log

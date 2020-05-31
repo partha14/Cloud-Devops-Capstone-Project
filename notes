@@ -1,0 +1,16 @@
+docker build -t helloworld .
+docker images ls
+docker run -p 80:80 -it helloworld
+ dockerpath=housing-prices
+docker login --username partha14
+docker tag housing-prices partha14/hellworld:v1 
+echo "Docker ID and Image: $dockerpath"
+docker push partha14/helloworld:v1
+kubectl apply -f helloworld-deployment.yaml
+kubectl apply -f helloworld-service.yaml
+kubectl get svc service-helloworld -o yaml
+pip install --upgrade pip
+
+
+aws eks --region us-west-2 update-kubeconfig --name eks-example --kubeconfig ~/.kube/eks-example
+Added new context arn:aws:eks:us-west-2:096321260743:cluster/eks-example to /Users/partha/.kube/eks-example

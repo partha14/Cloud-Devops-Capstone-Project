@@ -1,0 +1,13 @@
+- hosts: localhost
+  tasks:
+  - python_requirements_facts:
+      dependencies:
+      - openshift
+
+- hosts: localhost
+  vars:
+    ansible_python_interpreter: '{{ ansible_playbook_python }}'
+  tasks:
+  - python_requirements_facts:
+      dependencies:
+      - openshift
