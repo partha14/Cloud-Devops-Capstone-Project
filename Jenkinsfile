@@ -1,4 +1,4 @@
-stage(‘Linting') {
+stage('Linting') {
 
 make lint
 
@@ -9,7 +9,7 @@ make buildimage
 
 
 }
-stage(Push image') {
+stage('Push image') {
 
 make pushimage
 
