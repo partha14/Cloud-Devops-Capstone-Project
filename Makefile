@@ -35,15 +35,15 @@ lint:
 	html_lint.py index.html
 
 buildimage:
-	docker build -t helloworld .
-	docker images ls
+	sudo docker build -t helloworld .
+	sudo docker images ls
 
 pushimage:
 	
-	docker login --username partha14
-	docker tag helloworld partha14/hellworld:v1 
+	sudo docker login --username partha14
+	sudo docker tag helloworld partha14/hellworld:v1 
 	echo "Docker ID and Image: $dockerpath"
-	docker push partha14/helloworld:v1
+	sudo docker push partha14/helloworld:v1
 
 setcontext:
 	aws eks --region us-west-2 update-kubeconfig --name eks-example --kubeconfig ~/.kube/eks-example
