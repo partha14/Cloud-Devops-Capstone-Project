@@ -1,26 +1,28 @@
-stage('Linting') {
+pipeline {
+    Agent any
+    stages {
+        stage('Linting') {
 
-make lint
+               make lint
 
+             }
+        stage('Build image') {
+
+            make buildimage
+        }
+        
+        stage('Push image') {
+            make pushimage
+        }
+        
+        stage('set current kubectl context') {
+            make setcontext
+        }
+        
+        stage('Deploy container') {
+            make deployContainer
+        }
+
+    }
 }
-stage('Build image') {
 
-make buildimage
-
-
-}
-stage('Push image') {
-
-make pushimage
-
-}
-stage('set current kubectl context') {
-
-make setcontext
-
-}
-stage('Deploy container') {
-
-make deployContainer
-
-}
