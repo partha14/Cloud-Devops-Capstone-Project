@@ -3,28 +3,29 @@ pipeline {
     stages {
         stage('Linting') {
             steps{
-               make lint
+               sh 'make lint'
               }
             }
         stage('Build image') {
             steps{
-            make buildimage
+            sh 'make buildimage'
             }
         }
         stage('Push image') {
             steps{
-            make pushimage
+            sh 'make pushimage'
             }
         }
         stage('set current kubectl context') {
             steps{
-            make setcontext
+            sh 'make setcontext'
             }
         }
         stage('Deploy container') {
             steps{
-                make deployContainer
+                sh 'make deployContainer'
             }
         }
     }
+}
 }
