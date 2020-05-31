@@ -23,7 +23,7 @@ setup:
 	python3 -m pip install --user requests
 	python3 -m pip install --user openshift
 	python3 -m pip install --user kubernetes
-	sudo  python3 -m install --upgrade --user openshift
+	sudo python3 -m pip install --upgrade --user openshift
 	python3 -m pip freeze
 #install:
 	# This should be run from inside a virtualenv
