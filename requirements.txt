@@ -13,4 +13,4 @@ ansible
 requests
 Openshift
 html-linter
-hadolintw=1.2.1
+hadolintw==1.2.1
