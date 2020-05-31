@@ -1,6 +1,14 @@
 pipeline {
     agent any
     stages {
+        stage('Install') {
+            steps{
+            sh 'make setup'
+            sh 'make install'
+
+            }
+        }
+
         stage('Build image') {
             steps{
             sh 'make buildimage'
