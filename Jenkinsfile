@@ -1,16 +1,16 @@
 pipeline {
     agent any
     stages {
-        stage('Linting') {
-            steps{
-               sh 'make lint'
-              }
-            }
         stage('Build image') {
             steps{
             sh 'make buildimage'
             }
         }
+        stage('Linting') {
+            steps{
+               sh 'make lint'
+              }
+            }
         stage('Push image') {
             steps{
             sh 'make pushimage'
@@ -27,5 +27,4 @@ pipeline {
             }
         }
     }
-}
 }
