@@ -21,13 +21,17 @@ pipeline {
             steps{
                 withCredentials([usernamePassword(credentialsId: 'dockerhub', passwordVariable: 'pass', usernameVariable: 'user')]) {
                 // the code in here can access $pass and $user
-                sh 'make pushimage user=$user,pass=$pass'
+                sh 'make pushimage user=$user pass=$pass'
                 }
             }
         }
         stage('set current kubectl context') {
             steps{
-            sh 'make setcontext'
+                withAWS(credentials: 'aws-credentials', region: 'us-west-2') {
+                   sh 'aws iam get-user'
+                   sh 'make setcontext'
+                }
+                
             }
         }
         stage('Deploy container') {
