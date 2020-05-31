@@ -13,7 +13,7 @@ setup:
 	python3 -m venv ~/.devops
 	sudo yum -y install docker
 	source ~/.devops/bin/activate
-	pip install --upgrade pip &&\
+	pip install --user --upgrade pip &&\
 		pip install --user -r requirements.txt
 
 #install:
