@@ -11,7 +11,7 @@ setup:
 	sudo yum install -y python3
 	sudo yum -y install python-pip 
 	python3 -m venv ~/.devops
-	sudo yum install docker
+	sudo yum -y install docker
 	source ~/.devops/bin/activate
 
 install:
