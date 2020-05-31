@@ -13,11 +13,12 @@ setup:
 	python3 -m venv ~/.devops
 	sudo yum -y install docker
 	source ~/.devops/bin/activate
-
-install:
-	# This should be run from inside a virtualenv
 	pip install --upgrade pip &&\
 		pip install -r requirements.txt
+
+#install:
+	# This should be run from inside a virtualenv
+
 	
 
 lint:

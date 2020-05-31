@@ -4,8 +4,6 @@ pipeline {
         stage('Install') {
             steps{
             sh 'make setup'
-            sh 'make install'
-
             }
         }
 
