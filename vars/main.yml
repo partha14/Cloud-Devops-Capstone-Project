@@ -8,12 +8,12 @@ aws_profile: default
 stack_outputs: {}
 
 # EKS Cluster settings.
-eks_cluster_name: eks-example
+eks_cluster_name: eks-project
 # See: https://docs.aws.amazon.com/eks/latest/userguide/platform-versions.html
 eks_kubernetes_version: "1.16"
 
 # Nodegroup settings.
-eks_nodegroup_name: eks-example-nodegroup
+eks_nodegroup_name: eks-project-nodegroup
 eks_nodegroup_instance_type: t3.small
 eks_nodegroup_cluster_size: 2
 
@@ -26,6 +26,6 @@ eks_nodegroup_cluster_size: 2
 
 # Kubernetes settings.
 #k8s_kubeconfig: $HOME/.kube/config
-k8s_kubeconfig: ~/.kube/eks-example
+k8s_kubeconfig: ~/.kube/eks-project
 
 k8s_no_log: true

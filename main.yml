@@ -11,7 +11,7 @@
         - requests
     - name: Ensure VPC exists via CloudFormation.
       cloudformation:
-        stack_name: eks-example-vpc
+        stack_name: eks-project-vpc
         state: present
         region: "{{ aws_region }}"
         profile: "{{ aws_profile }}"
@@ -20,8 +20,8 @@
         template_parameters:
           Region: "{{ aws_region }}"
         tags:
-          stack: eks-example-vpc
-          application: eks-example
+          stack: eks-project-vpc
+          application: eks-project
       register: vpc_info
 
     - name: Add to stack_outputs.
@@ -30,7 +30,7 @@
 
     - name: Ensure EKS Cluster exists via CloudFormation.
       cloudformation:
-        stack_name: eks-example-cluster
+        stack_name: eks-project-cluster
         state: present
         region: "{{ aws_region }}"
         profile: "{{ aws_profile }}"
@@ -42,8 +42,8 @@
           Subnets: "{{ stack_outputs.Subnets }}"
           VpcId: "{{ stack_outputs.VpcId }}"
         tags:
-          stack: eks-example-cluster
-          application: eks-example
+          stack: eks-project-cluster
+          application: eks-project
       register: eks_cluster_info
 
     - name: Add to stack_outputs.
@@ -52,7 +52,7 @@
 
     - name: Ensure EKS Node Group exists via CloudFormation.
       cloudformation:
-        stack_name: eks-example-nodegroup
+        stack_name: eks-project-nodegroup
         state: present
         region: "{{ aws_region }}"
         profile: "{{ aws_profile }}"
@@ -65,6 +65,6 @@
           NodeInstanceType: "{{ eks_nodegroup_instance_type }}"
           Subnets: "{{ stack_outputs.Subnets }}"
         tags:
-          stack: eks-example-nodegroup
-          application: eks-example
+          stack: eks-project-nodegroup
+          application: eks-project
       register: eks_nodegroup_info
