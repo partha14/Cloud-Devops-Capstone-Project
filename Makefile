@@ -39,7 +39,7 @@ lint:
 	echo 'test'
 pushimage:
 	
-	cat /home/ec2-user/dockerCredentials | sudo docker login --username partha14 --password-stdin
+	sudo cat /home/ec2-user/dockerCredentials | sudo docker login --username partha14 --password-stdin
 	sudo docker tag helloworld partha14/hellworld:v1 
 	echo "Docker ID and Image: $dockerpath"
 	sudo docker push partha14/helloworld:v1
