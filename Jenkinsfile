@@ -19,7 +19,7 @@ pipeline {
             }
         stage('Push image') {
             steps{
-                withCredentials([usernamePassword(credentialsId: 'dockerhub', passwordVariable: 'pass', usernameVariable: 'user')]) {
+                withCredentials([usernamePassword(credentialsId: 'docker', passwordVariable: 'pass', usernameVariable: 'user')]) {
                 // the code in here can access $pass and $user
                 sh 'echo user is $user  pass is $pass'
                 sh 'make user="${user}" pass="${pass}" pushimage'
