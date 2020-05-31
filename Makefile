@@ -26,18 +26,16 @@ setup:
 #install:
 	# This should be run from inside a virtualenv
 
-	
-
-lint:
-	# See local hadolint install instructions:   https://github.com/hadolint/hadolint
-	# This is linter for Dockerfiles
-	hadolint Dockerfile
-	html_lint.py index.html
-
 buildimage:
 	sudo systemctl start docker
 	sudo docker build -t helloworld .
 	sudo docker images ls
+
+lint:
+	# See local hadolint install instructions:   https://github.com/hadolint/hadolint
+	# This is linter for Dockerfiles
+	#hadolint Dockerfile
+	html_lint.py index.html
 
 pushimage:
 	
