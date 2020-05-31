@@ -35,6 +35,7 @@ lint:
 	html_lint.py index.html
 
 buildimage:
+	sudo systemctl start docker
 	sudo docker build -t helloworld .
 	sudo docker images ls
 
