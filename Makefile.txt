@@ -8,6 +8,7 @@
 setup:
 	# Create python virtualenv & source it
 	# source ~/.devops/bin/activate
+	sudo yum install -y python3
 	python3 -m venv ~/.devops
 	source ~/.devops/bin/activate
 
@@ -15,7 +16,7 @@ install:
 	# This should be run from inside a virtualenv
 	pip install --upgrade pip &&\
 		pip install -r requirements.txt
-	yum install docker
+	sudo yum install docker
 
 lint:
 	# See local hadolint install instructions:   https://github.com/hadolint/hadolint
