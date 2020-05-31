@@ -13,8 +13,15 @@ setup:
 	python3 -m venv ~/.devops
 	sudo yum -y install docker
 	source ~/.devops/bin/activate
-	pip install --user --upgrade pip &&\
-		pip install --user -r requirements.txt
+	#pip install --user --upgrade pip &&\
+		#pip install --user -r requirements.txt
+	pip install --user hadolintw
+	pip install --user html_lint
+	pip install --user boto3
+	pip install --user botocore
+	pip install --user ansible
+	pip install --user requests
+	pip install --user openshift
 
 #install:
 	# This should be run from inside a virtualenv
