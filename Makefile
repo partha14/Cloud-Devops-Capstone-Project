@@ -19,7 +19,7 @@ setup:
 	python3 -m pip install --user html-linter
 	python3 -m pip install --user boto3
 	python3 -m pip install --user botocore
-	python3 -m pip install --user ansible
+	python3 -m pip install ansible
 	python3 -m pip install requests
 	python3 -m pip install openshift
 	python3 -m pip install kubernetes
