@@ -37,7 +37,9 @@ pipeline {
         }
         stage('Deploy container') {
             steps{
-                sh 'make deployContainer'
+                withAWS(credentials: 'aws-credentials', region: 'us-west-2') {
+                  sh 'make deployContainer' 
+                }
             }
         }
     }
