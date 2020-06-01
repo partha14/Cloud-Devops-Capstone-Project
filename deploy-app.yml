@@ -19,6 +19,7 @@
     - name: Create a Service object by reading the definition from a file
       k8s:
        definition: '{{ item }}'
+       kubeconfig: '{{ k8s_kubeconfig }}'
        namespace: default
        state: present
       loop: "{{ lookup('template', 'helloworld/helloworld-deployment.yml') | from_yaml_all | list }}"
@@ -27,6 +28,7 @@
     - name: Create a Service object by reading the definition from a file
       k8s:
        definition: '{{ item }}'
+       kubeconfig: '{{ k8s_kubeconfig }}'
        namespace: default
        state: present
       loop: "{{ lookup('template', 'helloworld/helloworld-service.yml') | from_yaml_all | list }}"
